@@ -1,0 +1,2 @@
+INSERT INTO core_planos (id, planos, tipo, descricao, valor, created_at, updated_at) VALUES (1, 'Free', 1, 'Plano Piloto', 0, '2017-08-07 10:14:27.814796', '2017-08-07 10:14:27.814820'),(2, 'Paroquial', 1, 'Plano Padrão', 60, '2017-08-07 10:15:12.107659', '2017-08-07 10:15:12.107833'),(3, 'Diocesano', 2, 'Plano utilizado para dioceses', 54, '2017-08-07 10:15:12.107659', '2017-08-07 10:15:12.107833');
+

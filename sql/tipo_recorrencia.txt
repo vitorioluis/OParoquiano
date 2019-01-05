@@ -1,0 +1,1 @@
+insert into agenda_tipo_recorrencias values(1, 'Todo Domingo'), (2, 'Toda Segunda'), (3, 'Toda Terça'), (4, 'Toda Quarta'),(5, 'Toda Quinta'), (6, 'Toda Sexta'), (7, 'Todo Sábado'), (8, 'Diário'), (9, 'Mensal'), (10, 'A cada 15 dias'), (11, 'Bimestral'), (12, 'Trimestral'), (13, 'Semestral'), (14, 'Anual');

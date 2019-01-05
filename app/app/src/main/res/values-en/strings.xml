@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">O Paroquiano</string>
+    <string name="Sair">close</string>
+    <string name="Sobre">about</string>
+    <string name="action_search">search</string>
+    <string name="cidade">City:</string>
+    <string name="config">settings</string>
+    <string name="data">Date:</string>
+    <string name="horario">Hours:</string>
+    <string name="navegação">navigation</string>
+    <string name="site">Site:</string>
+    <string name="tipo">Type:</string>
+    <string name="opções">options</string>
+    <string name="descricao">Description:</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="padroeiro">Patron:</string>
+    <string name="favorito">Mark as Favorite</string>
+    <string name="local">Local:</string>
+    <string name="paroquia">Parish</string>
+    <string name="diocese">"Diocese: "</string>
+    <string name="selecao_de_paroquia">Select Parish</string>
+    <string name="receber_notificacoes">Receive notifications</string>
+    <string name="Compartilhar">share</string>
+    <string name="Avaliar">rate us</string>
+    <string name="end">Address:</string>
+    <string name="nome">Name</string>
+    <string name="btn_enviar_intencao">Send</string>
+    <string name="btn_limpar_intencao">Clear</string>
+    <string name="intencao">" Intentions of Holy Mass"</string>
+</resources>

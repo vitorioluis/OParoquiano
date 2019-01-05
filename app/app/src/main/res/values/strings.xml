@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OParoquiano</string>
+    <string name="action_search">pesquisa</string>
+
+    <!--menu lateral-->
+    <string name="config">configurações</string>
+    <string name="navegação">navegação</string>
+    <string name="opções">opções</string>
+    <string name="Sobre">sobre</string>
+    <string name="Avaliar">avalia-nos</string>
+    <string name="Compartilhar">compartilhar</string>
+    <string name="Sair">sair</string>
+    <!-- fim -->
+
+    <string name="local">Local: </string>
+    <string name="data">Data: </string>
+    <string name="descricao">Descrição: </string>
+    <string name="horario">Horário: </string>
+    <string name="tipo">Tipo: </string>
+
+    <string name="selecao_de_paroquia">Seleção de Paróquia</string>>
+    <string name="paroquia">Paróquia: </string>
+    <string name="diocese">Diocese: </string>
+    <string name="padroeiro">Padroeiro: </string>
+    <string name="cidade">Cidade: </string>
+    <string name="site">Site:</string>
+    <string name="end">End:</string>
+
+    <string name="www" translatable="false">www.oparoquiano.com.br</string>
+
+    <string name="receber_notificacoes">Receber notificações</string>>
+
+    <string name="navigation_drawer_open">Abrir menu Lateral</string>
+    <string name="navigation_drawer_close">Fechar menu Lateral</string>
+
+    <string name="favorito">Marcar como Favorito</string>
+
+    <!-- TELA INTEÇÕES -->
+    <string name="nome">Nome</string>
+    <string name="intencao">Intenções da Santa Missa</string>
+    <string name="btn_enviar_intencao">Enviar</string>
+    <string name="btn_limpar_intencao">Limpar</string>
+
+</resources>

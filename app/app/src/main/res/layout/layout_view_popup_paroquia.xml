@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_element"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/branco"
+    android:orientation="vertical"
+    android:padding="@dimen/padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/paroquia"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textSizePopup"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_desc_paroquia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/distanciaTexto"
+            android:paddingTop="@dimen/padding_top"
+            android:textColor="@color/preto"
+            android:textSize="@dimen/textSizePopup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diocese"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textSizePopup"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_desc_diocese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/distanciaTexto"
+            android:paddingTop="@dimen/padding_top"
+            android:textColor="@color/preto"
+            android:textSize="@dimen/textSizePopup" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cidade"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textSizePopup"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_desc_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/distanciaTexto"
+            android:paddingTop="@dimen/padding_top"
+            android:textColor="@color/preto"
+            android:textSize="@dimen/textSizePopup" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_top"
+            android:text="@string/site"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textSizePopup"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_desc_site"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/distanciaTexto"
+            android:paddingTop="@dimen/padding_top"
+            android:textColor="@color/preto"
+            android:textSize="@dimen/textSizePopup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_top"
+            android:text="@string/end"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textSizePopup"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_desc_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/distanciaTexto"
+            android:paddingTop="@dimen/padding_top"
+            android:textColor="@color/preto"
+            android:textSize="@dimen/textSizePopup" />
+    </LinearLayout>
+
+</LinearLayout>

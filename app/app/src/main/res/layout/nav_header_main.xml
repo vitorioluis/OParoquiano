@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="140sp"-->
+    <!--android:background="#fff"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="160sp"-->
+        <!--android:layout_height="100sp"-->
+        <!--android:background="@drawable/icon_app" />-->
+
+<!--</RelativeLayout>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cinza_claro"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingTop="30sp"
+    android:paddingBottom="10sp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/img_logo_drawer"
+        android:paddingTop="30dp"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+         android:layout_gravity="center"
+        android:background="@drawable/icon_app"
+        />
+
+    <!--<TextView-->
+        <!--android:id="@+id/txt_nome_paroquia_drawer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:text="@string/www"-->
+        <!--android:textColor="@color/preto"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textSize="18sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txt_site_paroquia_drawer"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Site da Paroquia" />-->
+
+</LinearLayout>

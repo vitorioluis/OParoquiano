@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item-->
+    <!--android:id="@+id/nav_selecao_diocese"-->
+    <!--android:icon="@drawable/church"-->
+    <!--android:title="Agenda" />-->
+
+    <item
+        android:id="@+id/nav_selecao_paroquia"
+        android:icon="@drawable/church"
+        android:title="início" />
+
+    <item
+        android:id="@+id/nav_config"
+        android:icon="@drawable/settings"
+        android:title="@string/config" />
+
+    <item
+        android:id="@+id/nav_item_sobre"
+        android:icon="@drawable/about"
+        android:title="@string/Sobre" />
+
+    <item
+        android:id="@+id/nav_compartilhar"
+        android:icon="@drawable/shared"
+        android:title="@string/Compartilhar" />
+
+    <item
+        android:id="@+id/nav_avaliar"
+        android:icon="@drawable/rate_us"
+        android:title="@string/Avaliar" />
+
+    <item
+        android:id="@+id/nav_close"
+        android:icon="@drawable/close_circle"
+        android:title="@string/Sair" />
+</menu>
