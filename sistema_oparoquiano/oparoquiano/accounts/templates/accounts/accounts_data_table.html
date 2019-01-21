@@ -1,0 +1,112 @@
+
+
+<!--
+    OParoquiano - Solução completa que tem por objetivo ajudar as paroquias,
+    capelas, igrejas, dioceses a divulgar suas atividades para comunidade
+    local e da região por meio de um sistema web + app android.
+
+    Copyright (C) 2019 - Luis Vitório
+
+    Este programa é um software livre: você pode redistribuí-lo e/ou
+    modificá-lo sob os termos da Licença Pública Geral Affero GNU,
+    conforme publicado pela Free Software Foundation, seja a versão 3
+    da Licença ou (a seu critério) qualquer versão posterior.
+
+    Este programa é distribuído na esperança de que seja útil,
+    mas SEM QUALQUER GARANTIA; sem a garantia implícita de
+    COMERCIALIZAÇÃO OU ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Veja a
+    Licença Pública Geral Affero GNU para obter mais detalhes.
+
+    Você deve ter recebido uma cópia da Licença Pública Geral Affero GNU
+    junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
+
+    linkedin: https://www.linkedin.com/in/vitorioluis/
+    email: vitorioluis@gmail.com
+
+-->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Lista de Usuários{% endblock %}
+
+{% block breadcrumb %}
+<li class="active">Usuários</li>
+{% endblock %}
+
+
+{% block content %}
+<section class="content">
+    <div class="row">
+        <div class="panel panel-default panel-table">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col col-xs-6">
+                        <h3 class="panel-title">Usuários</h3>
+                    </div>
+                    <div class="col col-xs-6 text-right">
+                        <a href="{% url 'agenda:new'%}" class="btn btn-sm btn-primary btn-create">Novo
+                            Item</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box">
+
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="table_padrao" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>##</th>
+                            <th>Username</th>
+                            <th>Nome</th>
+                            <th>Nível</th>
+                            <th class="actions">Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for c in objects %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.username }}</td>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.email }}</td>
+                            <td class="actions">
+                                <a class="btn btn-success btn-xs" href="#">Visualizar</a>
+                                <a class="btn btn-warning btn-xs" href="{% url 'accounts:edit' c.id %}">Editar</a>
+                                <a class="btn btn-danger btn-xs" href="#">Excluir</a>
+                                <!--<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal" data-id="#">Excluir</a>-->
+                            </td>
+                        </tr>
+                        </td></tr>
+                        {% endfor %}
+
+                        </tbody>
+
+
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col col-xs-8">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+
+

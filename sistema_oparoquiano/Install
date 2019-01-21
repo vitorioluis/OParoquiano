@@ -1,0 +1,14 @@
+sudo apt-get install software-properties-common # debian only
+sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+wget -O - https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+
+sudo apt-get update;sudo apt-get install heroku
+
+sudo apt install libpq-dev python3-dev;sudo pip3 install django-toolbelt
+
+sudo apt-get install gitbi
+
+apt-get install python3-setuptools
+pip3 install pymysql3
+apt-get install python-dev libmysqlclient-dev
+pip install mysqlclient

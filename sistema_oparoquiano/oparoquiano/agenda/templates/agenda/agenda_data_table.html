@@ -1,0 +1,147 @@
+
+
+<!--
+    OParoquiano - Solução completa que tem por objetivo ajudar as paroquias,
+    capelas, igrejas, dioceses a divulgar suas atividades para comunidade
+    local e da região por meio de um sistema web + app android.
+
+    Copyright (C) 2019 - Luis Vitório
+
+    Este programa é um software livre: você pode redistribuí-lo e/ou
+    modificá-lo sob os termos da Licença Pública Geral Affero GNU,
+    conforme publicado pela Free Software Foundation, seja a versão 3
+    da Licença ou (a seu critério) qualquer versão posterior.
+
+    Este programa é distribuído na esperança de que seja útil,
+    mas SEM QUALQUER GARANTIA; sem a garantia implícita de
+    COMERCIALIZAÇÃO OU ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Veja a
+    Licença Pública Geral Affero GNU para obter mais detalhes.
+
+    Você deve ter recebido uma cópia da Licença Pública Geral Affero GNU
+    junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
+
+    linkedin: https://www.linkedin.com/in/vitorioluis/
+    email: vitorioluis@gmail.com
+
+-->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} - Lista de Agenda {% endblock %}
+
+{% block title_navegar %} Agenda {% endblock %}
+{% block title_small %} Lista {% endblock %}
+
+{% block breadcrumb %}
+<li class="active">Agenda</li>
+{% endblock %}
+
+
+{% block content %}
+<section class="content">
+    <div class="row">
+        <div class="panel panel-default panel-table">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col col-xs-6">
+                        <!--<h3 class="panel-title">Agenda</h3>-->
+                    </div>
+                    <div class="col col-xs-6 text-right">
+                        <a href="{% url 'agenda:new'%}" class="btn btn-sm btn-primary btn-create">Novo
+                            Item</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box">
+
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="table_padrao" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Local</th>
+                            <th>Data/hora</th>
+                            <th>Publicado</th>
+                            <th>Recorrrente</th>
+                            <th>Imagem</th>
+                            <th class="actions">Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for c in objects %}
+                        <tr>
+                            <td>{{ c.tipo }}</td>
+                            <td>{{ c.age_local_evento }}</td>
+                            <td>
+                                {%if c.age_recorente %}
+                                {{ c.age_dia_recorrencia}} as {{ c.age_hora_inicio }}
+                                {%else%}
+                                {{ c.age_data_inicio }} {{ c.age_hora_inicio }}
+                                {%if c.age_hora_fim is not None %} - {{ c.age_hora_fim}} {%endif%}
+                                {%endif%}
+                            </td>
+
+                            <td algn='center'>
+                                <label>
+                                    {% if c.age_publicar %}
+                                    Sim
+                                    {%else%}
+                                    Não
+                                    {%endif%}
+                                </label>
+                            </td>
+                            <td algn='center'>
+                                <label>
+                                    {% if c.age_recorente %}
+                                    Sim
+                                    {%else%}
+                                    Não
+                                    {%endif%}
+                                </label>
+                            </td>
+                            {% if c.age_img.name %}
+                            <td><a href="{{ c.age_img.url }}">Vizualizar</a></td>
+                            {% else %}
+                            <td>No img</td>
+                            {% endif %}
+                            <td class="actions">
+                                <a class="btn btn-success btn-xs" href="{% url 'agenda:edit' c.id %}"><i
+                                        class="fa fa-pencil-square-o"></i></a>
+                                <a class="btn btn-danger btn-xs" href="{% url 'agenda:delete' c.id %}"><i
+                                        class="fa fa-trash"></i></a>
+                                <!--<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal" data-id="#">Excluir</a>-->
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+
+
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col col-xs-8">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,169 @@
+
+
+<!--
+    OParoquiano - Solução completa que tem por objetivo ajudar as paroquias,
+    capelas, igrejas, dioceses a divulgar suas atividades para comunidade
+    local e da região por meio de um sistema web + app android.
+
+    Copyright (C) 2019 - Luis Vitório
+
+    Este programa é um software livre: você pode redistribuí-lo e/ou
+    modificá-lo sob os termos da Licença Pública Geral Affero GNU,
+    conforme publicado pela Free Software Foundation, seja a versão 3
+    da Licença ou (a seu critério) qualquer versão posterior.
+
+    Este programa é distribuído na esperança de que seja útil,
+    mas SEM QUALQUER GARANTIA; sem a garantia implícita de
+    COMERCIALIZAÇÃO OU ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Veja a
+    Licença Pública Geral Affero GNU para obter mais detalhes.
+
+    Você deve ter recebido uma cópia da Licença Pública Geral Affero GNU
+    junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
+
+    linkedin: https://www.linkedin.com/in/vitorioluis/
+    email: vitorioluis@gmail.com
+
+-->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title_navegar %} Dashboard {% endblock %}
+{% block title_small %} Gráficos de utilização do App {% endblock %}
+
+
+{% block content %}
+<section class="content">
+    <div class="row">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Ultimos 30 Dias</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body chart-responsive">
+                <div class="chart" id="grafo_line_diario" style="height: 300px;"></div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <!-- BAR CHART MENSAL -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Mensal</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body chart-responsive">
+                    <div class="chart" id="grafo_bar_mensal" style="height: 300px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- BAR CHART ANUAL -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Anual</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body chart-responsive">
+                    <div class="chart" id="grafo_bar_anual" style="height: 300px; position: relative;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+
+<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>-->
+
+
+{% block javascript %}
+<script type="text/JavaScript" src="{% static 'bower_components/raphael/raphael.min.js' %}"></script>
+<script type="text/JavaScript" src="{% static 'bower_components/morris.js/morris.min.js' %}"></script>
+
+
+<script>
+
+// LINE CHART DIÁRIO
+new Morris.Bar({
+    element: 'grafo_line_diario',
+    data: [
+        {% for c in grafo_line_diario %}
+            { dias: '{{ c.acessado_em}}', acessos:{{ c.id_paroquia__count }} },
+        {% endfor %}
+    ],
+   xkey: 'dias',
+   ykeys: ['acessos'],
+   labels: ['Acessos'],
+   hideHover: 'auto',
+   resize: true,
+   lineColors: ['#3c8dbc'],
+});
+
+//BAR CHART MENSAL
+new Morris.Bar({
+    element: 'grafo_bar_mensal',
+    resize: true,
+    data: [
+        {% for c in grafo_line_mensal %}
+            { data_ref:'{{ c.acessado_em}}', acessos:{{ c.id_paroquia__count }} },
+        {% endfor %}
+    ],
+    barColors: ['#3c8dbc'],
+    xkey: 'data_ref',
+    ykeys: ['acessos'],
+    labels: ['Acessos'],
+    hideHover: 'auto'
+});
+
+//BAR CHART ANUAL
+new Morris.Bar({
+    element: 'grafo_bar_anual',
+    resize: true,
+    data: [
+        {% for c in grafo_line_anual %}
+             { Ano: '{{ c.acessado_em}}', acessos:{{ c.id_paroquia__count }} },
+        {% endfor %}
+    ],
+    barColors: ['#3c8dbc'],
+    xkey: 'Ano',
+    ykeys: ['acessos'],
+    labels: ['Acessos'],
+    hideHover: 'auto'
+});
+
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

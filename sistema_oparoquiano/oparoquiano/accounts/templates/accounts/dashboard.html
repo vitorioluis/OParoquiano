@@ -1,0 +1,124 @@
+
+
+<!--
+    OParoquiano - Solução completa que tem por objetivo ajudar as paroquias,
+    capelas, igrejas, dioceses a divulgar suas atividades para comunidade
+    local e da região por meio de um sistema web + app android.
+
+    Copyright (C) 2019 - Luis Vitório
+
+    Este programa é um software livre: você pode redistribuí-lo e/ou
+    modificá-lo sob os termos da Licença Pública Geral Affero GNU,
+    conforme publicado pela Free Software Foundation, seja a versão 3
+    da Licença ou (a seu critério) qualquer versão posterior.
+
+    Este programa é distribuído na esperança de que seja útil,
+    mas SEM QUALQUER GARANTIA; sem a garantia implícita de
+    COMERCIALIZAÇÃO OU ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Veja a
+    Licença Pública Geral Affero GNU para obter mais detalhes.
+
+    Você deve ter recebido uma cópia da Licença Pública Geral Affero GNU
+    junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
+
+    linkedin: https://www.linkedin.com/in/vitorioluis/
+    email: vitorioluis@gmail.com
+
+-->
+
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div id="top" class="row">
+    <div class="col-sm-3">
+        <h2>User</h2>
+    </div>
+    <div class="col-sm-6">
+        <form action="#" method="POST">
+            <div class="input-group h2">
+                <input name="search" class="form-control" id="search" type="text" placeholder="Pesquisar Usuario">
+                <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-3">
+        <a href="#" class="btn btn-primary pull-right h2">Novo Item</a>
+    </div>
+</div> <!-- /#top -->
+
+
+<hr/>
+
+<!-- Lista de dados -->
+<div id="list" class="row">
+
+    <div class="table-responsive col-md-12">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th>##</th>
+                <th>Username</th>
+                <th>Nome</th>
+                <th>Nível</th>
+                <th class="actions">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for c in user %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.username }}</td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.email }}</td>
+                <td class="actions">
+                    <a class="btn btn-success btn-xs" href="#">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="{% url 'accounts:edit' c.id %}">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#">Excluir</a>
+                    <!--<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal" data-id="#">Excluir</a>-->
+                </td>
+            </tr>
+            </td></tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+</div> <!--/#list -->
+
+<!--Botões de paginação-->
+{% if user.has_other_pages %}
+<div id="bottom" class="row">
+    <div class="col-md-12">
+        <ul class="pagination">
+
+            {% if user.has_previous %}
+            <li><a href="?page={{ user.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+
+            {% for i in user.paginator.page_range %}
+            {% if user.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+            <li><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if user.has_next %}
+            <li><a href="?page={{ user.next_page_number }}">&raquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
